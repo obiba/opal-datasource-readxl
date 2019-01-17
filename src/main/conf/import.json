@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "array",
+  "items": [
+    {
+      "key": "file",
+      "type": "string",
+      "title": "Data File",
+      "format": "file",
+      "description": "Excel file in XLS or XLSX format supported by [readxl](https://www.rdocumentation.org/packages/readxl)."
+    },
+    {
+      "key": "na",
+      "type": "string",
+      "title": "Missing Values",
+      "description": "A comma separated list of double-quoted strings to be considered as missing. Example: \"NONE\",\"INFINITY\",\"999\". By default, readxl treats blank cells as missing data."
+    },
+    {
+      "key": "skip",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "title": "Skip",
+      "description": "Minimum number of rows to skip before reading anything, be it column names or data. Leading empty rows are automatically skipped, so this is a lower bound."
+    },
+    {
+      "key": "id",
+      "title": "Identifier Column Name",
+      "type": "string",
+      "default": "id",
+      "description": "Name of the column containing the IDs"
+    },
+    {
+      "key": "entity_type",
+      "title": "Entity Type",
+      "type": "string",
+      "default": "Participant",
+      "description": "Specify what these data relate to (Participant, Instrument, Area etc.)"
+    }
+  ],
+  "required": [
+    "file"
+  ]
+}
