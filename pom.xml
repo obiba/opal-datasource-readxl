@@ -13,8 +13,8 @@
     <junit.version>4.12</junit.version>
     <fest.version>2.0M10</fest.version>
 
-    <opal.version>2.14.0</opal.version>
-    <obiba-commons.version>1.11.0</obiba-commons.version>
+    <opal.version>4.0-SNAPSHOT</opal.version>
+    <obiba-commons.version>1.15.0</obiba-commons.version>
 
     <!-- maven plugins -->
     <github-release-plugin.version>1.2.0</github-release-plugin.version>
@@ -230,7 +230,7 @@
     <repository>
       <id>obiba-releases</id>
       <name>Obiba Maven Releases Repository</name>
-      <url>https://dl.bintray.com/obiba/maven</url>
+      <url>https://obiba.jfrog.io/obiba/libs-release</url>
       <releases>
         <enabled>true</enabled>
       </releases>

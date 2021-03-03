@@ -1,18 +1,15 @@
 package org.obiba.datasource.opal.readxl;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import com.google.common.base.Strings;
-
 import com.google.common.collect.Lists;
 import org.obiba.opal.spi.r.AbstractROperation;
 import org.obiba.opal.spi.r.RUtils;
-import org.rosuda.REngine.REXP;
-import org.rosuda.REngine.REXPMismatchException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DataReadXLOperation extends AbstractROperation {
 
@@ -38,7 +35,7 @@ public class DataReadXLOperation extends AbstractROperation {
 
   @Override
   protected void doWithConnection() {
-    if(Strings.isNullOrEmpty(source)) return;
+    if (Strings.isNullOrEmpty(source)) return;
     ensurePackage("readxl");
     eval("library(readxl)", false);
     ensurePackage("tibble");
@@ -53,7 +50,7 @@ public class DataReadXLOperation extends AbstractROperation {
         log.debug("Eval command: {}", readCmd);
         eval(readCmd, false);
       }
-    } catch (REXPMismatchException e) {
+    } catch (Exception e) {
       log.warn("Unable to read Excel sheet names", e);
     }
   }
