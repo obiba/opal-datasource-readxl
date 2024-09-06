@@ -7,7 +7,10 @@
       "type": "string",
       "title": "Data File",
       "format": "file",
-      "description": "Excel file in XLS or XLSX format supported by [readxl](https://www.rdocumentation.org/packages/readxl)."
+      "description": "Excel file in XLS or XLSX format supported by [readxl](https://www.rdocumentation.org/packages/readxl).",
+      "fileFormats": [
+        ".xls", ".xlsx"
+      ]
     },
     {
       "key": "na",
