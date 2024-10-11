@@ -3,7 +3,7 @@
   <groupId>org.obiba.datasource</groupId>
   <artifactId>opal-datasource-readxl</artifactId>
   <packaging>jar</packaging>
-  <version>2.0.0</version>
+  <version>2.0-SNAPSHOT</version>
   <name>opal-datasource-readxl</name>
   <url>https://www.obiba.org</url>
 
@@ -256,7 +256,7 @@
     <connection>scm:git:https://github.com/obiba/opal-datasource-readxl.git</connection>
     <developerConnection>scm:git:https://github.com/obiba/opal-datasource-readxl.git</developerConnection>
     <url>https://github.com/obiba/opal-datasource-readxl</url>
-    <tag>2.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
