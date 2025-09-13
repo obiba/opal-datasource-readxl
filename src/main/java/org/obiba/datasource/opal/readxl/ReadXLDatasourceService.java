@@ -77,7 +77,7 @@ public class ReadXLDatasourceService extends AbstractRDatasourceService {
 
         return new RSymbolWriter() {
 
-          private List<String> symbols = Lists.newArrayList();
+          private final List<String> symbols = Lists.newArrayList();
 
           @Override
           public String getSymbol(ValueTable table) {
@@ -92,15 +92,17 @@ public class ReadXLDatasourceService extends AbstractRDatasourceService {
 
           @Override
           public void dispose() {
+            if (symbols.isEmpty()) return;
             execute(new DataWriteXLOperation(symbols, "out.xlsx"));
 
             // copy file from R session
             File outputFolder = getOutputFile();
-            String resultFileName = symbols.get(0) + ".xlsx";
+            String symbol = symbols.getFirst();
+            String resultFileName = symbol + ".xlsx";
             File resultFile = Paths.get(outputFolder.getAbsolutePath(), resultFileName).toFile();
             int i = 1;
             while (resultFile.exists()) {
-              resultFileName = symbols.get(0) + "-" + i + ".xlsx";
+              resultFileName = symbol + "-" + i + ".xlsx";
               resultFile = Paths.get(outputFolder.getAbsolutePath(), resultFileName).toFile();
               i++;
             }
